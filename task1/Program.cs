@@ -8,56 +8,58 @@
 // 4 3 4 1
 // 4 9 25 4
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) //создаем функцию для создания двумерного массива
 {
-    //       0        1     
-    int[,] matrix = new int[rows, columns]; // 3x4
-    Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int[,] matrix = new int[rows, columns]; // задаем двумерный массив   
+
+
+    Random rnd = new Random();              // вводим генератор случайных чисел
+
+    for (int i = 0; i < matrix.GetLength(0); i++) //цикл заполнения строк массива
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)// цикл заполнения элекментов массива
         {
-            matrix[i, j] = rnd.Next(min, max);
+            matrix[i, j] = rnd.Next(min, max);   //заполнения случайными  числами методом Next
         }
 
     }
 
-    return matrix;
+    return matrix;       //возврат созданного массива 
 }
 
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix) //создаем безвозратную функцию для вывода массива на консоль
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         //Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j],5}");
+            Console.Write($"{matrix[i, j],5}"); //,5 количество пробелов между числами
         }
         //Console.WriteLine(" |");
-        Console.WriteLine();
+        Console.WriteLine(); // переключение строк
     }
 }
 
-void ElemEvenIndexesToSquare(int[,] matrix)
-{
-    for (int i = 0; i < matrix.GetLength(0); i+=2)
+void ElemEvenIndexesToSquare(int[,] matrix) //создаем функцию  по поиску четного индекса массива и
+{                                           //в квадрат числа с данными индексами
+    for (int i = 0; i < matrix.GetLength(0); i += 2) //индекс строк идет только по четным
     {
-        for (int j = 0; j < matrix.GetLength(1); j+=2)
+        for (int j = 0; j < matrix.GetLength(1); j += 2) //индекс столбцов идет только по четным
         {
-            //if (i % 2 == 0 && j % 2 == 0)
+            //if (i % 2 == 0 && j % 2 == 0) //ищем четные индексы массива
             //{
-                matrix[i,j] *= matrix[i,j];
+            matrix[i, j] *= matrix[i, j];  //возводим в квадрат число массива с четными индексами
             //}
         }
     }
 }
 
-int[,] array2d = CreateMatrixRndInt(3, 4, 1, 10);
-PrintMatrix(array2d);
+int[,] array2d = CreateMatrixRndInt(5, 4, 1, 10); // вводим параметры массива в функцию
+PrintMatrix(array2d);  //выводим двумерный массив
 
-Console.WriteLine();
+Console.WriteLine(); //переключаем строку
 
-ElemEvenIndexesToSquare(array2d);
-PrintMatrix(array2d);
+ElemEvenIndexesToSquare(array2d); //вводим параметр массива для функции с возведенными в квадрат элементами
+PrintMatrix(array2d);     //выводим этот массив
