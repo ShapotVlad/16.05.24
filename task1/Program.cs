@@ -11,16 +11,16 @@
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) //создаем функцию для создания двумерного массива
 {
 
-    int[,] matrix = new int[rows, columns]; // задаем двумерный массив   
+    int[,] matrix = new int[rows, columns];                       // задаем двумерный массив   
 
 
-    Random rnd = new Random();              // вводим генератор случайных чисел
+    Random rnd = new Random();                                      // вводим генератор случайных чисел
 
-    for (int i = 0; i < matrix.GetLength(0); i++) //цикл заполнения строк массива
+    for (int i = 0; i < matrix.GetLength(0); i++)                 //цикл заполнения строк массива
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)// цикл заполнения элекментов массива
+        for (int j = 0; j < matrix.GetLength(1); j++)             // цикл заполнения элекментов массива
         {
-            matrix[i, j] = rnd.Next(min, max);   //заполнения случайными  числами методом Next
+            matrix[i, j] = rnd.Next(min, max);                   //заполнения случайными  числами методом Next
         }
 
     }
@@ -41,10 +41,9 @@ void PrintMatrix(int[,] matrix) //создаем безвозратную фун
         Console.WriteLine(); // переключение строк
     }
 }
-
-void ElemEvenIndexesToSquare(int[,] matrix) //создаем функцию  по поиску четного индекса массива и
-{                                           //в квадрат числа с данными индексами
-    for (int i = 0; i < matrix.GetLength(0); i += 2) //индекс строк идет только по четным
+ void ElemEvenIndexesToSquare(int[,] matrix)                      //создаем функцию  по поиску четного индекса массива и
+{                                                                //в квадрат числа с данными индексами
+    for (int i = 0; i < matrix.GetLength(0); i += 2)              //индекс строк идет только по четным
     {
         for (int j = 0; j < matrix.GetLength(1); j += 2) //индекс столбцов идет только по четным
         {
