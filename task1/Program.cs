@@ -55,10 +55,10 @@ void PrintMatrix(int[,] matrix) //создаем безвозратную фун
     }
 }
 
-int[,] array2d = CreateMatrixRndInt(5, 4, 1, 10); // вводим параметры массива в функцию
-PrintMatrix(array2d);  //выводим двумерный массив
+int[,] array2d = CreateMatrixRndInt(5, 4, 1, 10); // вызываем функцию и вводим параметры массива в функцию
+PrintMatrix(array2d);  //вызываем и выводим двумерный массив
 
 Console.WriteLine(); //переключаем строку
 
-ElemEvenIndexesToSquare(array2d); //вводим параметр массива для функции с возведенными в квадрат элементами
-PrintMatrix(array2d);     //выводим этот массив
+ElemEvenIndexesToSquare(array2d); //вызываем и вводим параметр массива для функции с возведенными в квадрат элементами
+PrintMatrix(array2d);     //вызываем и выводим этот массив
