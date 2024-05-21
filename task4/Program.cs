@@ -6,16 +6,16 @@
 // Пример
 // [‘a’, ‘b’, ‘c’, ‘d’] => “abcd”
 
-string CharArrayToString(char[] arr)
+string CharArrayToString(char[] arr)  //создали функцию(метод) для создания массива для создание строки
 {
-    string res = string.Empty;            // ""  пустая
-    for (int i = 0; i < arr.Length; i++)
+    string res = string.Empty;            // ""  пустая, задаем строку
+    for (int i = 0; i < arr.Length; i++) // цикл создания строки из элементов массива
     {
         res += arr[i];
     }
-    return res;
+    return res; //возврат  в строку
 }
 
-char[] array = {'a', 'b', 'c', 'd', 'e', 'f'};
-string result = CharArrayToString(array);
-Console.WriteLine(result);
+char[] array = {'a', 'b', 'c', 'd', 'e', 'f'}; //вызываем функцию  и вводим параметры 
+string result = CharArrayToString(array); //создаем переменную строки
+Console.WriteLine(result); //вывод строки
