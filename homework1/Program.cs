@@ -1,4 +1,4 @@
-﻿
+﻿//Задайте двумерный массив символов (тип char [,]). Создать строку из символов этого массива.
 
 
     
@@ -17,7 +17,7 @@
     
 
     // Метод для преобразования двумерного массива символов в одномерный
-    static char[] GetCharArrayAs1D(char[,] charArray)
+    char[] GetCharArrayAs1D(char[,] charArray)
     {
         int rows = charArray.GetLength(0);
         int cols = charArray.GetLength(1);
