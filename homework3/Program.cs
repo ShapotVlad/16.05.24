@@ -1,12 +1,12 @@
-﻿
+﻿//Задайте произвольную строку. Выясните, является ли она палиндромом.
 
 
 Console.Write("Введите строку: ");
-        string input = Console.ReadLine();
+        string input = Console.ReadLine(); // ввод строки
 
-        bool isPalindrome = IsPalindrome(input);
+        bool isPalindrome = IsPalindrome(input); // создаем метод IsPalindrome
 
-        if (isPalindrome)
+        if (isPalindrome)    // вывод на консоль
         {
             Console.WriteLine("Строка \"{0}\" является палиндромом.", input);
         }
@@ -23,7 +23,7 @@ Console.Write("Введите строку: ");
 
         for (int i = 0; i < str.Length / 2; i++)
         {
-            if (str[i] != str[str.Length - i - 1])
+            if (str[i] != str[str.Length - i - 1]) //если символы не эквивалент не эквиваленты
             {
                 return false;
             }
