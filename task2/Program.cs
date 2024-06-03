@@ -6,31 +6,31 @@
 // 4 3 4 1 => 2 + 3 + 5 = 10
 // 2 9 5 4
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // смотри task1 
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // создали локальную функцию для создания двухмерного массива
 {
     //       0        1     
     int[,] matrix = new int[rows, columns]; // 3x4
-    Random rnd = new Random();
+    Random rnd = new Random();// генератор случайных чисел
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)//цикл по строкам
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)//цикл по стобцам
         {
-            matrix[i, j] = rnd.Next(min, max);
+            matrix[i, j] = rnd.Next(min, max);//создание элемента
         }
     }
-    return matrix;
+    return matrix;//возврат в массив
 }
 
-void PrintMatrix(int[,] matrix)                               //смотри task1 
+void PrintMatrix(int[,] matrix)                               //создали локальную функцию для вывода двухмерного массива на консоль 
 
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        Console.Write("|");
+        Console.Write("|");//строки в |
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j],5}");
+            Console.Write($"{matrix[i, j],5}");// между элементами 5 пробелов
         }
         Console.WriteLine(" |");
     }
@@ -50,15 +50,15 @@ int SumMainDiagonal(int[,] matrix)     //создаем возвратную ф�
     {
         sum = sum + matrix[d, d]; // sum += matrix[i, i];
     }
-    return sum;
+    return sum;// возврат в переменную  суммы
 }
 
-int[,] array2d = CreateMatrixRndInt(4, 5, 1, 10); // создаем двумерный массив и вводим данные для  функции  
-PrintMatrix(array2d); //выводим на консоль двумерный массив
+int[,] array2d = CreateMatrixRndInt(4, 5, 1, 10); // вызываем двумерный массив и вводим данные для  функции  
+PrintMatrix(array2d); //вызываем функцию и выводим на консоль двумерный массив
 
 Console.WriteLine();
 
-int result = SumMainDiagonal(array2d); //создаем переменную для функции подсчета суммы  диоганали
+int result = SumMainDiagonal(array2d); //создаем переменную для функции подсчета суммы  диоганали и вызываем функцию
 Console.Write(result); //выводим результат
 
 
